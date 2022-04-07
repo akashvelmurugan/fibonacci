@@ -1,45 +1,32 @@
 package com.fibonacci;
 
-import java.util.Iterator;
-import java.util.Scanner;
+import java.util.LinkedList;
 
 public class Fibonacci {
 
 	public static void main(String[] args) {
+		LinkedList<Integer> linkedList = new LinkedList<Integer>();
+		int firstValue = 0;
+		int secondValue = 1;
+		int result = 0;
 
-		Scanner scanner = new Scanner(System.in);
-		//int number=scanner.nextInt();
-		
-		for (int i = 1; i < 10; i++) {
-			int counter =0;
-			for (int j = 2; j < i; j++) {
-				if (i%j == 0) {
-					counter++;
+		while(linkedList.size()<10) {
+			result=firstValue+secondValue;
+			int counter = 0;
+			for (int j = 2; j < result; j++) {
+				if(result%j==0) {
+					counter ++;
 				}
 			}
-			if (counter == 0) {
-				System.out.println(i);
+			if (counter==0) {
+				linkedList.add(result);
 			}
+			firstValue = secondValue;
+			secondValue = result;
 		}
-		
-		boolean condition = true;
-		int array[]= new int[10];
-		
-		while (condition) {
-			
-			
-		}
-		
+		System.out.println(linkedList);
 	}
 }
-
-
-
-
-
-
-
-
 
 
 
